@@ -1,0 +1,90 @@
+
+.slogan {
+    max-width: 30%;
+    height: max-content;
+    position: relative;
+    filter:url(#round);
+
+    &__wrapper {
+        padding: 40px 40px 0 0;
+    }
+    &::before {
+        @include path(polygon(100% 0, 100% 71%, 81% 100%, 0 100%, 0 0), $txt-color-light);
+    }
+
+    &__subtitle {
+        margin:0 0 5px 50px;
+    }
+
+    &__title {
+        margin:0 0 40px 50px;
+        @include adaptiv-font(20, 34)
+    }
+
+    &__btn {
+        position: relative;
+        width: max-content;
+        padding: 15px 70px 15px 50px;
+        color: $txt-color-light;
+        font-weight: 900;
+        clip-path: polygon(0 0, 82% 1%, 100% 37%, 100% 100%, 0 100%);
+        background: $actent-color;
+        transition: all .5s ease-in-out;
+
+        &:hover {
+            background: $actent-color-second;
+        }
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .slogan {
+        max-width: 35%;
+
+        &__subtitle {
+            margin:0 0 5px 30px;
+        }
+
+        &__title {
+            margin: 0 0 20px 30px;
+        }
+
+        &__btn {
+            padding: 10px 50px 10px 30px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .slogan {
+        max-width: 45%;
+
+        &__wrapper {
+            padding: 20px 40px 0 0;
+        }
+        
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .slogan {
+        max-width: 50%;
+
+    }
+}
+
+@media (max-width: 600px) {
+    .slogan {
+        max-width: 70%;
+
+    }
+}
+
+@media (max-width: 420px) {
+    .slogan {
+        max-width: 85%;
+
+    }
+}

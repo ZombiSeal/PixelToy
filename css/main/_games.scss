@@ -1,0 +1,144 @@
+.games {
+    position: relative;
+    padding-top: 10%;
+    padding-bottom: 10%;
+
+    &::before {
+        @include path(polygon(0px 5%, 45.47% 5%, 51% 0px, 100% 0px, 100% 100%, 0px 100%), $txt-color-light);
+        z-index: 0;
+
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        bottom: -90px;
+        left: 0;
+        width: 5%;
+        height: 130px;
+        background: url("../../img/svg/stars-faqs.svg") no-repeat;
+        background-size: 100%;
+    }
+
+    &__wrapper {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__body {
+        width: 100%;
+        height: min-content;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__info {
+        width: 53%;
+        height: 100%;
+    }
+
+    &__title {
+        margin-bottom: 7%;
+    }
+
+
+    &__btn {
+        margin-top: 15%;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        filter: url(#round);
+
+    }
+
+    &__v-slider {
+        @include path(polygon(84% 0, 100% 15%, 100% 100%, 0 100%, 0 0), transparent);
+
+        .swiper-pagination-bullet {
+            width: 25px;
+            height: 25px;
+            background: $txt-color-light;
+            opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: $actent-color-second;
+        }
+    }
+
+
+
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper-wraper {
+    height: 100%;
+}
+
+
+
+.horizont-slider {
+    height: 100%;
+
+    &__title {
+        color: $actent-color;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .games {
+        &::after {
+            width: 7%;
+        }
+
+        &__img {
+            position: static;
+            display: flex;
+            flex-direction: column;
+            max-height: 350px;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    .games {
+        padding-top: 17%;
+        &::after {
+            display: none;
+        }
+        &__body {
+            flex-direction: column-reverse;
+        }
+
+        &__info {
+            width: 100%;
+        }
+
+        &__img {
+            width: 265px;
+            height: 295px;
+            margin-bottom: 10%;
+        }
+
+        &__btn {
+            margin-top: 30px;
+        }
+    }
+
+}

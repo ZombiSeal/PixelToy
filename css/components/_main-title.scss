@@ -1,0 +1,53 @@
+.main-title {
+    max-width: 30%;
+    height: max-content;
+    position: relative;
+    filter:url(#round);
+
+    &__wrapper {
+        padding: 40px 20px 40px 50px;
+    }
+
+    &::before {
+        @include path(polygon(86.72% 0px, 99.45% 29.85%, 99.25% 98.77%, 0px 100%, 0px 0px), $txt-color-light);
+    }
+
+
+    &__title {
+    }
+
+
+    &__subtitle {
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-title {
+        max-width: 35%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-title {
+        max-width: 45%;      
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-title {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 420px) {
+    .main-title {
+        max-width: 85%;
+    }
+}
+

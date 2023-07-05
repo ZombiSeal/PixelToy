@@ -1,0 +1,12 @@
+.subtitle {
+    font-family: $title-font;
+    line-height: 120%;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+    @include adaptiv-font(20, 34);
+
+    &_size_s {
+        @include adaptiv-font(16, 20);
+    }
+
+}

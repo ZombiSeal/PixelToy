@@ -1,0 +1,80 @@
+.contact {
+    position: relative;
+    color: $txt-color-light;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    margin-bottom: 125px;
+    // filter: url(#round);
+
+    &::before {
+        @include path(polygon(100% 0px, 100% 82%, 76% 82%, 65% 100%, 11% 100%, 7% 93%, 7% 0px), url("../../img/main/bg-contact.jpg") no-repeat);
+        background-size: cover;
+        background-position: center;
+        z-index: -2;
+    }
+
+    &__wrapper {
+        max-width: calc(1440/#{$max-width} * 100%);
+    }
+
+    &__title {
+        margin-bottom: 3%;
+    }
+
+
+    &__desc {
+        margin-bottom: 10%;
+    }
+
+
+    &__form {
+        width: 55%;
+        padding: 5%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .contact {
+        margin-bottom: 40px;
+
+        &::before {
+            clip-path: polygon(100% 0px, 100% 82%, 76% 82%, 65% 100%, 0 100%, 0 100%, 0 0);
+        }
+
+        &__wrapper {
+            max-width: $max-width-wrapper;
+        }
+
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .contact {
+        &__form {
+            width: 65%;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    .contact {
+        &::before {
+            clip-path: none;
+        }
+
+        &__form {
+            padding: 10% 5%;
+        }
+    }
+
+}
+
+@media (max-width: 576px) {
+    .contact {
+        &__form {
+            width: 100%;
+        }
+    }
+}

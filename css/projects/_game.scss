@@ -1,0 +1,168 @@
+.game {
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    &__info {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 4vw;
+    }
+
+    &__title {}
+
+    &__desc {}
+
+    &__btn {}
+
+    &__img {
+        position: relative;
+        width: 45%;
+        height: 35vw;
+        filter: url(#round);
+    }
+
+    &__img-wrapper {
+        height: 100%;
+        @include path(polygon(84% 0, 100% 15%, 100% 100%, 0 100%, 0 0), transparent);
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &_theme_dark {
+        color: $txt-color-light;
+    }
+
+    &_theme_light {
+        position: relative;
+        padding: 10% 30px;
+
+        // background: $txt-color-light;
+        &::before {
+            @include path(polygon(35% 0px, 40% 5%, 100% 5%, 100% 100%, 0px 100%, 0px 0px), white);
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            top: -50px;
+            left: 0;
+            width: 5%;
+            height: 130px;
+            background: url("../../img/svg/stars-faqs.svg") no-repeat;
+            background-size: 100%;
+        }
+
+    }
+
+    &__wrapper_light {
+        flex-direction: row-reverse;
+    }
+
+
+    &__wrapper_dark {
+        padding-top: 10%;
+        padding-bottom: 15%;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: -2;
+            width: 50%;
+            height: 60%;
+            bottom: -10%;
+            right: -30%;
+            background: $actent-color;
+        }
+    }
+}
+
+.container {
+    // position: absolute;
+    // width: 100vw;
+
+    // height: fit-content;
+    // min-height: 1000vh;
+
+    .line {
+        // top: 0;
+        left: 15px;
+        height: 100%;
+        // top: 55px;
+        // left: 15px;
+        // // height: 195vh;
+    }
+}
+
+.line1 {
+    position: absolute;
+    z-index: -1;
+}
+
+.footer {
+    border-top: 23px solid $txt-color-light;
+}
+
+@media (max-width: 1024px) {
+    .game {
+
+        &__img {
+            height: 50vw;
+        }
+
+
+        &_theme_light {
+            &::after {
+                width: 7%;
+            }
+        }
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .game {
+
+        &__wrapper {
+            // position: relative;
+            text-align: center;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            gap: 10vw;
+        }
+
+        &__info {
+            width: 100%;
+            align-items: center;
+        }
+
+        &__img {
+            width: 45vw;
+            height: 45vw;
+        }
+
+        &_theme_light {
+            padding: 15% 15px;
+        }
+
+        &__wrapper_dark {
+            &::after {
+                width: 200vw;
+                height: 20vw;
+                top: 20vw;
+                background: $actent-color;
+            }
+        }
+    }
+
+}

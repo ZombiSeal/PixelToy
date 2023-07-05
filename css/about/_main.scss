@@ -1,0 +1,26 @@
+.hero {
+    &__wrapper {
+        justify-content: center;
+        &::before {
+            background: url("../../img/about/about-img-bg.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &__card {
+        margin: 0;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        filter: none;
+        &__wrapper {
+            &::before {
+                clip-path: none;
+            }
+        }
+    }
+}

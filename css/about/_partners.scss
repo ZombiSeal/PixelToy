@@ -1,0 +1,83 @@
+.partners {
+    position: relative;
+    background: $txt-color-light;
+    padding: 5% 0;
+
+    &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: -90px;
+        width: 5%;
+        height: 130px;
+        background: url("../../img/svg/stars-faqs.svg") no-repeat;
+        background-size: 100%;
+    }
+
+
+    &__title {
+        margin-bottom: 10%;
+    }
+
+    &__slider {
+        width: 2255px;
+    }
+
+    &__anim {
+        width: 100%;
+        animation: slider 10s linear infinite alternate running;
+
+    }
+
+    &__img {
+        width: 100%;
+    }
+}
+
+@keyframes slider {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+
+.marquee {
+    max-width: 100%;
+    overflow: hidden;
+
+    &__wrapper {
+        width: 200%;
+        display: flex;
+        gap: 60px;
+        animation: marquee-infinite 20s linear infinite;
+    }
+
+    &__line {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        gap: 60px;
+    }
+
+    &__img {
+        width: 20vw;
+
+        img {
+            object-fit: contain;
+        }
+    }
+}
+
+@keyframes marquee-infinite {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

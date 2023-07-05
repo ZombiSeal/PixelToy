@@ -1,0 +1,19 @@
+.text {
+    @include adaptiv-font(14, 20);
+
+    &_size_s {
+        @include adaptiv-font(12, 16);
+    }
+
+    &_size_m {
+        @include adaptiv-font(20, 27);
+    }
+
+    &_weight_bold {
+        font-weight: 900;
+    }
+
+    &_upper{
+        text-transform: uppercase;
+    }
+}

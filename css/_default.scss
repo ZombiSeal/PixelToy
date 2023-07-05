@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&family=Unbounded:wght@700&display=swap');
+
+$primary-font: 'Raleway', sans-serif;
+$title-font: 'Unbounded', cursive;
+
+$txt-color-dark: #000000;
+$txt-color-light: #ffffff;
+
+$bg-color: #191919;
+$actent-color: #FF8126;
+$actent-color-second: #A7C986;
+
+$max-width-wrapper: 1440px;
+$max-width: 1920;
+
+
+@mixin adaptiv-font($mobSize, $pcSize) {
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $addSize +$addSize * 0.7;
+
+    @media(max-width: 768px) {
+        font-size: calc((#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$max-width})));
+    }
+
+    @media(min-width: 768px) {
+        font-size: calc((#{$mobSize + px} + #{$addSize} * (100vw / #{$max-width})));
+    }
+}
+
+@mixin path($path, $bg) {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    background: $bg;
+    clip-path: $path;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    font-family: $primary-font;
+    background: $bg-color;
+    overflow-x: hidden;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+section {
+    padding: 0 30px;
+
+}
+
+.wrapper {
+    max-width: $max-width-wrapper;
+    margin: 0 auto;
+
+    &_width {
+        max-width: calc(1440/#{$max-width} * 100%);
+    }
+}
+
+
+.btn-txt {
+    font-weight: 900;
+    @include adaptiv-font(16, 27);
+}
+
+.scale {
+    transform: scale(1);
+    transition: all .5s ease-in-out;
+
+    &:hover {
+        transform: scale(1.5);
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .wrapper {
+        &_width {
+            max-width: $max-width-wrapper;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    $max-width-wrapper: 940px;
+    $max-width: 1024;
+
+    .wrapper {
+        max-width: $max-width-wrapper;
+        // max-width: calc(#{$max-width-wrapper}/#{$max-width} * 100%);
+    }
+
+    .body_menu {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    $max-width-wrapper: 580px;
+
+    .wrapper {
+        max-width: $max-width-wrapper;
+    }
+}
+
+@import "_null.scss";
+@import "./components/_acent-txt.scss";
+@import "./components/_text.scss";
+@import "./components/_title.scss";
+@import "./components/_subtitle.scss";
+@import "./components/_btn.scss";

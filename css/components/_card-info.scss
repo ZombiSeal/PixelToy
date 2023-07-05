@@ -1,0 +1,14 @@
+.card-info {
+    position: relative;
+    filter: url(#round);
+    &::before {
+        @include path(polygon(0 0, 85% 0, 100% 15%, 100% 100%, 15% 100%, 0 85%), $actent-color-second);
+    }
+
+    &_theme_ligth {
+        color: $txt-color-dark;
+        &::before {
+            background: $txt-color-light;
+        }
+    }
+}

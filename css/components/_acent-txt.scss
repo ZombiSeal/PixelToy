@@ -1,0 +1,9 @@
+.acent-txt {
+    font-weight: 900;
+    color: $actent-color;
+    @include adaptiv-font(20, 28);
+
+    &_theme_main{
+        color: $actent-color-second;
+    }
+}

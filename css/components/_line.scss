@@ -1,0 +1,34 @@
+.line {
+    position: absolute;
+    top: calc(100vh/10 + 80px);
+    left: 15px;
+    width: 100%;
+    height: 112vh;
+    min-height: 100vh;
+    z-index: -1;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.container {
+    position: relative;
+    overflow: hidden;
+    box-sizing: content-box;
+
+    .line {
+        left: 35px;
+        height: 92%;
+    }
+
+}
+
+@media (max-width: 1200px) {
+
+    .line {
+        display: none;
+    }
+}

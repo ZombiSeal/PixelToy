@@ -1,0 +1,28 @@
+.hero {
+
+    // clip-path: polygon(65px 0px, 100% 0px, 100% 100%, 0px 100%, 0px 80px) !important;
+
+    &__wrapper {
+        clip-path: polygon(65px 0px, 100% 0px, 100% 100%, 0px 100%, 0px 80px);
+
+        justify-content: center;
+        &::before {
+            display: none;
+        }
+    }
+
+    &__card {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        filter: none;
+        &__wrapper {
+            &::before {
+                clip-path: none;
+            }
+        }
+    }
+}

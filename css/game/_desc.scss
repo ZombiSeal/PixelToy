@@ -1,0 +1,246 @@
+.left-figure {
+    position: absolute;
+    right: 0;
+    top: 42%;
+    width: 10%;
+    height: 45vw;
+    background: url(../../img/games/game-bg1.svg) no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.game-desc {
+    position: relative;
+    padding-top: 10%;
+
+    &__wrapper {}
+
+    &__title {
+        color: $txt-color-light;
+        margin-bottom: 7%;
+    }
+
+    &__body {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        &_reverse {
+            justify-content: flex-end;
+        }
+    }
+
+    &__img-wrapper {
+        // @include path(polygon(17% 0, 100% 0, 100% 100%, 0px 100%, 0 17%), transparent);
+        position: relative;
+        width: 40%;
+        margin-top: 5%;
+        clip-path: polygon(17% 0, 100% 0, 100% 100%, 0px 100%, 0 17%);
+        filter: url(#round);
+    }
+
+    &__img {}
+
+    &__info {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 65%;
+        background: $txt-color-light;
+        padding: 5%;
+
+        clip-path: polygon(0% 0, 100% 0px, 100% 80%, 88% 100%, 0 100%);
+        border-radius: 10px;
+
+        &_path {
+            left: 0;
+            clip-path: polygon(0% 0, 100% 0px, 100% 100%, 12% 100%, 0 80%);
+        }
+    }
+
+    &__text {
+        margin-bottom: 3%;
+    }
+}
+
+.game-char {
+    width: 45%;
+    filter: none;
+    clip-path: none;
+}
+
+.decoration {
+    position: relative;
+    width: 100%;
+    // height: auto;
+    // min-height: 0;
+
+    &__triangle {
+        position: absolute;
+        width: 13%;
+        height: 100%;
+        background: url(../../img/games/game-bg2.svg) no-repeat;
+        background-size: cover;
+        background-position: top right;
+        bottom: 100%;
+        left: 0;
+        z-index: -1;
+
+    }
+
+    &__figure {
+        position: relative;
+        width: 100%;
+        height: 10vw;
+        background: $txt-color-light;
+        clip-path: polygon(35% 0px, 40% 30%, 100% 30%, 100% 100%, 0px 100%, 0px 0px);
+        margin-top: 10%;  
+
+    }
+     
+}
+
+.game-link {
+    text-align: center;
+    color: $txt-color-light;
+    padding: 5% 30px;
+    clip-path: polygon(7% 0, 100% 0px, 100% 100%, 12% 100%, 7% 75%);
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        margin-bottom: 5%;
+    }
+
+    &__btn {
+        z-index: 1;
+    }
+}
+
+.container {
+
+    &_pad {
+        padding-bottom: 7%;
+    }
+    // min-height: 230vh;
+    .line {
+        left: -5%;
+        height: 97%;
+
+        &_another {
+            right: 0;
+            left: auto;
+            top: 10%;
+            width: 95%;
+            height: 100%;
+        }
+
+        &_static{
+            left: 15px;
+            top: -10px;
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+        }
+    }
+
+
+
+}
+
+@media (max-width: 1200px) {
+    .left-figure {
+        top: 53%;
+        width: 40%;
+        height: 10vw;
+        background: url(../../img/games/game-bg1-1200.svg) no-repeat;
+        background-size: 100% 100%;
+        background-position: bottom left;
+    }
+   
+}
+
+@media (max-width: 1024px) {
+    .game-desc {
+        &__body {
+            align-items: center;
+        }
+
+        &__img-wrapper {
+            margin: 0;
+        }
+
+        &__info {
+            position: static;
+            width: 55%;
+            color: $txt-color-light;
+            background: transparent;
+            clip-path: none;
+            padding: 0;
+
+        }
+    }
+
+    .game-link {
+        clip-path: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .left-figure {
+        display: none;
+    }
+    .game-desc {
+
+        &__body {
+            flex-direction: column;
+
+            &_reverse {
+                flex-direction: column-reverse;
+            }
+        }
+
+        &__img-wrapper {
+            width: 70%;
+            margin-bottom: 10%;
+            clip-path: none;
+            filter: none;
+
+            &::before {
+                position: absolute;
+                content: "";
+                top: 30%;
+                left: -50vw;
+                width: 150vw;
+                height: 50%;
+                background: $actent-color;
+                z-index: -1;
+            }
+        }
+
+        &__info {
+            width: 100%;
+
+        }
+    }
+
+    .game-char {
+        position: relative;
+
+        &::before {
+            background: transparent; 
+            border: 3px solid $actent-color-second;
+        }
+    }
+
+    .game-link {
+        clip-path: none;
+    }
+}

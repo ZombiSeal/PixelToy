@@ -1,0 +1,101 @@
+.hero {
+
+    height: fit-content;
+    filter: none;
+
+    // clip-path: polygon(65px 0px, 100% 0px, 100% 100%, 0px 100%, 0px 80px) !important;
+
+    &__wrapper {
+        padding: 95px 0 7% 0;
+
+        &::before {
+            background: url(../../img/contact-bg.jpg);
+            background-size: cover;
+        }
+    }
+
+    &__card {
+        margin: 0 0 5% 0;
+    }
+}
+
+.contact {
+    padding-bottom: 7%;
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 85%;
+        padding: 0 30px;
+    }
+
+    &__form {
+        width: 50%;
+        padding: 5%;
+    }
+
+    &__info {
+        filter: url(#round);
+        width: 45%;
+    }
+
+    &__desc {
+        margin-bottom: 7%;
+    }
+}
+
+.container {
+    .line {
+        left: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+
+        &__card {
+            margin: 0 0 10% 0;
+        }
+    }
+
+    .contact {
+        &__wrapper {
+            flex-direction: column-reverse;
+            width: 60%;
+        }
+
+        &__form {
+            width: 100%;
+            margin-top: 10%;
+            padding: 10%;
+        }
+
+        &__info {
+            width: 100%;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        filter: none;
+
+        &__wrapper {
+            &::before {
+                clip-path: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .contact {
+        &__wrapper {
+            width: 100%;
+        }
+
+    }
+}

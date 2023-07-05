@@ -1,0 +1,44 @@
+.hero {
+    display: flex;
+    justify-content: flex-end;
+    height: 95vh;
+    padding: 0;
+    filter: url(#round);
+
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        width: 95%;
+        height: auto;
+
+        &::before {
+            @include path(polygon(65px 0px, 100% 0px, 100% 100%, 0px 100%, 0px 80px), url("../../img/main/hero-img.jpg") no-repeat);
+            background-size: cover;
+        }
+    }
+
+    &__card {
+        margin: 0 0 80px 80px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        filter: none;
+
+        &__wrapper {
+            width: 100%;
+            &::before {
+                clip-path: none;
+            }
+        }
+
+        &__card {
+            margin: 0 0 30px 30px;
+        }
+    }
+}

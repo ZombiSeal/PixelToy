@@ -1,0 +1,46 @@
+.hero {
+    &__wrapper {
+        &::before {
+            background: url("../../img/career/bg-career.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+
+    &__card {
+        margin-left: 0;
+    }
+}
+
+.contact {
+    // transform: translateY(-6%);
+    z-index: 0;
+    &::before {
+        background: url('../../img/career/bg-contact.jpg') no-repeat;
+        background-size: cover ;
+        background-position: top right;
+    }
+}
+
+.container {
+    .line {
+        height: 95%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .hero {
+        filter: none;
+        &__wrapper {
+            &::before {
+                clip-path: none;
+            }
+        }
+    }
+
+    .contact {
+       padding-top: 20%;
+    }
+    
+}
